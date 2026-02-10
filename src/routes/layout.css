@@ -1,0 +1,161 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+	--color-primary-50: #eff6ff;
+	--color-primary-100: #dbeafe;
+	--color-primary-200: #bfdbfe;
+	--color-primary-300: #93c5fd;
+	--color-primary-400: #60a5fa;
+	--color-primary-500: #3b82f6;
+	--color-primary-600: #2563eb;
+	--color-primary-700: #1d4ed8;
+	--color-primary-800: #1e40af;
+	--color-primary-900: #1e3a8a;
+
+	--color-accent-50: #f5f3ff;
+	--color-accent-100: #ede9fe;
+	--color-accent-300: #c4b5fd;
+	--color-accent-400: #a78bfa;
+	--color-accent-500: #8b5cf6;
+	--color-accent-600: #7c3aed;
+	--color-accent-700: #7c3aed;
+	--color-accent-900: #4c1d95;
+}
+
+/* Smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: #94a3b8;
+	border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+	background: #475569;
+}
+
+/* Fade-in-up animation for scroll reveals */
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-left {
+	from {
+		opacity: 0;
+		transform: translateX(-40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slide-in-right {
+	from {
+		opacity: 0;
+		transform: translateX(40px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.animate-fade-in-up {
+	animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-fade-in {
+	animation: fade-in 0.8s ease-out both;
+}
+
+.animate-slide-in-left {
+	animation: slide-in-left 0.6s ease-out both;
+}
+
+.animate-slide-in-right {
+	animation: slide-in-right 0.6s ease-out both;
+}
+
+/* Stagger delays */
+.delay-100 {
+	animation-delay: 0.1s;
+}
+.delay-200 {
+	animation-delay: 0.2s;
+}
+.delay-300 {
+	animation-delay: 0.3s;
+}
+.delay-400 {
+	animation-delay: 0.4s;
+}
+.delay-500 {
+	animation-delay: 0.5s;
+}
+.delay-600 {
+	animation-delay: 0.6s;
+}
+.delay-700 {
+	animation-delay: 0.7s;
+}
+.delay-800 {
+	animation-delay: 0.8s;
+}
+
+/* Scroll reveal: hidden by default, revealed by IntersectionObserver */
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition:
+		opacity 0.6s ease-out,
+		transform 0.6s ease-out;
+}
+.reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+.reveal.visible.from-left {
+	animation: slide-in-left 0.6s ease-out both;
+}
+.reveal.visible.from-right {
+	animation: slide-in-right 0.6s ease-out both;
+}
+
+/* Theme transition */
+body {
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
