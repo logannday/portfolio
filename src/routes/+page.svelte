@@ -136,7 +136,7 @@
 					or catastrophizing about the impending AI apocalypse.
 				</p>
 				<!-- Info row -->
-				<div class="grid grid-cols-3 gap-4">
+				<div class="grid gap-4 sm:grid-cols-3">
 					<div
 						class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900"
 					>
