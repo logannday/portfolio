@@ -126,7 +126,7 @@
 			<div class="md:col-span-3">
 				<p class="mb-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
 					I'm a CS master's student and researcher at Western Washington University. I build
-					high-throughput pipelines for generating and analyzing exhaustive sets of protein mutant
+					high-throughput pipelines for generating and analyzing exhaustive sets of mutant protein
 					structures, and I develop unsupervised anomaly detection methods for detecting DNS
 					exfiltration. Outside of research, I enjoy building web tools and keeping up with the
 					JavaScript ecosystem.
