@@ -127,9 +127,9 @@
 				<p class="mb-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
 					I am a CS master's student and researcher at Western Washington University. I build
 					high-throughput pipelines for generating and analyzing exhaustive sets of mutant protein
-					structures, and I develop unsupervised anomaly detection methods for detecting DNS
-					exfiltration attacks. Outside of research, I enjoy building useful web tools for automating
-					repetetive tasks.
+					structures. I also develop unsupervised anomaly detection methods for detecting DNS
+					exfiltration attacks. Outside of research, I enjoy building useful web tools for my
+					friends.
 				</p>
 				<p class="mb-8 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
 					When I'm not in the lab, I'm usually playing music with friends, outside exploring nature,
