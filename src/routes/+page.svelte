@@ -127,9 +127,9 @@
 				<p class="mb-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
 					I'm a CS master's student and researcher at Western Washington University. I build
 					high-throughput pipelines for generating and analyzing exhaustive sets of protein mutant
-					structures, and I develop unsupervised anomaly detection methods for DNS exfiltration.
-					Outside of research, I enjoy building web tools and keeping up with the JavaScript
-					ecosystem.
+					structures, and I develop unsupervised anomaly detection methods for detecting DNS
+					exfiltration. Outside of research, I enjoy building web tools and keeping up with the
+					JavaScript ecosystem.
 				</p>
 				<p class="mb-8 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
 					When I'm not in the lab, I'm usually playing music with friends, outside exploring nature,
@@ -423,7 +423,7 @@
 					</li>
 					<li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400">
 						<span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500"></span>
-						<span>Date filtering and CSV export for easy use in print zine production</span>
+						<span>Date filtering and CSV export for easy use by zine creators</span>
 					</li>
 				</ul>
 				<div class="flex flex-wrap items-center gap-2">
