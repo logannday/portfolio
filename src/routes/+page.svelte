@@ -124,17 +124,16 @@
 			</div>
 			<!-- Bio -->
 			<div class="md:col-span-3">
-				<p class="mb-4 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-					I'm finishing my MS in Computer Science at Western Washington University, where I bring a
-					biochemistry background to computational research. I study how insertion mutations
-					structurally impact protein interfaces, and I build machine learning systems for network
-					intrusion detection -- most recently a contrastive learning approach for detecting DNS
-					exfiltration attacks. I also enjoy building web tools, and keeping up with new
-					technologies in the javascript ecosystem.
+
+					I'm a CS master's student and researcher at Western Washington University. I build
+					high-throughput pipelines for generating and analyzing exhaustive sets of protein mutant
+					structures, and I develop unsupervised anomaly detection methods for DNS exfiltration.
+					Outside of research, I enjoy building web tools and keeping up with the JavaScript
+					ecosystem.
 				</p>
 				<p class="mb-8 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
 					When I'm not in the lab, I'm usually playing music with friends, outside exploring nature,
-					or reading a good book.
+					or catastrophizing about the impending AI apocalypse.
 				</p>
 				<!-- Info row -->
 				<div class="grid grid-cols-3 gap-4">
