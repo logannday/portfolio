@@ -534,7 +534,7 @@
 					<h3 class="text-lg font-bold text-slate-900 dark:text-white">Languages</h3>
 				</div>
 				<div class="flex flex-wrap gap-2">
-					{#each ['Python', 'Typescript', 'Rust', 'C/C++', 'R', 'SQL'] as skill}
+					{#each ['Python', 'Typescript', 'Rust', 'C/C++', 'R', 'SQL', 'HTML', 'CSS'] as skill}
 						<span
 							class="rounded-lg bg-primary-50 px-3 py-1.5 text-sm font-medium text-primary-700 dark:bg-primary-900/20 dark:text-primary-300"
 							>{skill}</span
@@ -575,7 +575,7 @@
 					<h3 class="text-lg font-bold text-slate-900 dark:text-white">Tools & Frameworks</h3>
 				</div>
 				<div class="flex flex-wrap gap-2">
-					{#each ['Svelte', 'React', 'Docker', 'PyTorch', 'Scikit-learn', 'Pandas', 'Rosetta', 'Jupyter'] as skill}
+					{#each ['Svelte', 'React', 'Tailwind CSS', 'Shadcn', 'Docker', 'PyTorch', 'Scikit-learn', 'Pandas', 'Rosetta', 'Jupyter'] as skill}
 						<span
 							class="rounded-lg bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-700 dark:bg-amber-900/20 dark:text-amber-300"
 							>{skill}</span
