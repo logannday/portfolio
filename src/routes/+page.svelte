@@ -574,7 +574,7 @@
 					<h3 class="text-lg font-bold text-slate-900 dark:text-white">Tools & Frameworks</h3>
 				</div>
 				<div class="flex flex-wrap gap-2">
-					{#each ['Svelte', 'React', 'Tailwind CSS', 'Shadcn', 'Docker', 'PyTorch', 'Scikit-learn', 'Pandas', 'Rosetta', 'Jupyter'] as skill}
+					{#each ['Svelte', 'React', 'Docker', 'Tailwind CSS', 'Shadcn', 'PyTorch', 'Scikit-learn', 'Pandas', 'Rosetta', 'Jupyter'] as skill}
 						<span
 							class="rounded-lg bg-amber-50 px-3 py-1.5 text-sm font-medium text-amber-700 dark:bg-amber-900/20 dark:text-amber-300"
 							>{skill}</span
