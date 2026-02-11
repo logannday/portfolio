@@ -289,7 +289,7 @@
 					>
 				</h3>
 				<p class="mb-3 text-sm text-slate-600 dark:text-slate-400">
-					Computational Structural Bioinformatics Workshop
+					Computational Structural Bioinformatics Workshop at ACM-BCB 2025
 				</p>
 				<ul class="space-y-2">
 					<li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400">
