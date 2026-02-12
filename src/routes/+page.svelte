@@ -1,7 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import DnaAnimation from '$lib/DnaAnimation.svelte';
+	import ContrastiveAnimation from '$lib/ContrastiveAnimation.svelte';
 
 	let mounted = $state(false);
+	let dnaEl = $state<HTMLElement>();
+	let dnaVisible = $state(false);
+	let contrastiveEl = $state<HTMLElement>();
+	let contrastiveVisible = $state(false);
 
 	onMount(() => {
 		mounted = true;
@@ -21,7 +27,35 @@
 
 		document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-		return () => observer.disconnect();
+		// Dedicated observer for DNA animation (higher threshold)
+		const dnaObserver = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					dnaVisible = true;
+					dnaObserver.disconnect();
+				}
+			},
+			{ threshold: 0.5 }
+		);
+		if (dnaEl) dnaObserver.observe(dnaEl);
+
+		// Dedicated observer for contrastive animation
+		const contrastiveObserver = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					contrastiveVisible = true;
+					contrastiveObserver.disconnect();
+				}
+			},
+			{ threshold: 0.3 }
+		);
+		if (contrastiveEl) contrastiveObserver.observe(contrastiveEl);
+
+		return () => {
+			observer.disconnect();
+			dnaObserver.disconnect();
+			contrastiveObserver.disconnect();
+		};
 	});
 </script>
 
@@ -161,99 +195,6 @@
 	</div>
 </section>
 
-<!-- ==================== RESEARCH PROJECTS (commented out) ====================
-<section id="research" class="bg-slate-50 px-6 py-24 dark:bg-slate-900/50">
-	<div class="mx-auto max-w-4xl">
-		<div class="reveal">
-			<p class="mb-2 font-mono text-sm tracking-widest text-primary-600 dark:text-primary-400">
-				02
-			</p>
-			<h2 class="mb-12 text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
-				Research Projects
-			</h2>
-		</div>
-
-		<div class="space-y-8">
-			<div
-				class="reveal group rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:shadow-lg hover:shadow-primary-500/5 dark:border-slate-800 dark:bg-slate-900 dark:hover:shadow-primary-500/5"
-			>
-				<div class="mb-4 flex flex-wrap items-start justify-between gap-4">
-					<div>
-						<div class="mb-2 flex items-center gap-3">
-							<div
-								class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400"
-							>
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-								</svg>
-							</div>
-							<h3 class="text-xl font-bold text-slate-900 dark:text-white">
-								Structural Analysis of Protein Mutations
-							</h3>
-						</div>
-						<p class="font-mono text-sm text-slate-500 dark:text-slate-500">Jagodinski Research Group</p>
-					</div>
-				</div>
-				<ul class="space-y-3">
-					<li class="flex gap-3 text-slate-600 dark:text-slate-400">
-						<span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary-500"></span>
-						<span>Exhaustively generated and performed structural analysis of protein insertion-deletion (indel) mutants using computational modeling techniques</span>
-					</li>
-					<li class="flex gap-3 text-slate-600 dark:text-slate-400">
-						<span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary-500"></span>
-						<span>Proposed a novel metric (&Delta;FA) for quantifying structural changes at protein-protein interaction interfaces</span>
-					</li>
-					<li class="flex gap-3 text-slate-600 dark:text-slate-400">
-						<span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary-500"></span>
-						<span>Analyzed the effects of interface distance, inserted residue type, and secondary structure at the insertion site on the &Delta;FA of a protein</span>
-					</li>
-				</ul>
-				<div class="mt-6 flex flex-wrap gap-2">
-					{#each ['Rosetta', 'Biopython', 'Structural Biology'] as tag}
-						<span class="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700 dark:bg-primary-900/20 dark:text-primary-300">{tag}</span>
-					{/each}
-				</div>
-			</div>
-
-			<div
-				class="reveal group rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:shadow-lg hover:shadow-accent-500/5 dark:border-slate-800 dark:bg-slate-900 dark:hover:shadow-accent-500/5"
-			>
-				<div class="mb-4 flex flex-wrap items-start justify-between gap-4">
-					<div>
-						<div class="mb-2 flex items-center gap-3">
-							<div class="bg-accent-100 dark:bg-accent-900/30 flex h-10 w-10 items-center justify-center rounded-lg text-accent-600 dark:text-accent-400">
-								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-								</svg>
-							</div>
-							<h3 class="text-xl font-bold text-slate-900 dark:text-white">
-								Network Intrusion Detection System
-							</h3>
-						</div>
-						<p class="font-mono text-sm text-slate-500 dark:text-slate-500">Hong-Jagodzinski Research Group</p>
-					</div>
-				</div>
-				<ul class="space-y-3">
-					<li class="flex gap-3 text-slate-600 dark:text-slate-400">
-						<span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-500"></span>
-						<span>Developing methods for detecting adversarial DNS exfiltration attacks using random forest, time-series autoencoders, and contrastive learning</span>
-					</li>
-					<li class="flex gap-3 text-slate-600 dark:text-slate-400">
-						<span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-500"></span>
-						<span>Combining multiple ML approaches to build robust anomaly detection for network traffic patterns</span>
-					</li>
-				</ul>
-				<div class="mt-6 flex flex-wrap gap-2">
-					{#each ['PyTorch', 'scikit-learn', 'Network Security', 'Contrastive Learning'] as tag}
-						<span class="bg-accent-50 text-accent-700 dark:bg-accent-900/20 dark:text-accent-300 rounded-full px-3 py-1 text-xs font-medium">{tag}</span>
-					{/each}
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-==================== -->
-
 <!-- ==================== PUBLICATIONS ==================== -->
 <section id="publications" class="bg-slate-50 px-6 py-24 dark:bg-slate-900/50">
 	<div class="mx-auto max-w-4xl">
@@ -306,6 +247,11 @@
 						>
 					</li>
 				</ul>
+
+				<!-- DNA Insertion Mutation Animation -->
+				<div class="mt-4" bind:this={dnaEl}>
+					<DnaAnimation visible={dnaVisible} />
+				</div>
 			</div>
 
 			<div
@@ -348,6 +294,11 @@
 						>
 					</li>
 				</ul>
+
+				<!-- Contrastive Learning Animation -->
+				<div class="mt-4" bind:this={contrastiveEl}>
+					<ContrastiveAnimation visible={contrastiveVisible} />
+				</div>
 			</div>
 		</div>
 	</div>

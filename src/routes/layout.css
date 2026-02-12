@@ -153,6 +153,43 @@ html {
 	animation: slide-in-right 0.6s ease-out both;
 }
 
+/* DNA insertion animation */
+@keyframes dna-insert {
+	0% {
+		opacity: 0;
+		max-width: 0;
+		transform: scaleY(0.5);
+	}
+	60% {
+		opacity: 1;
+		max-width: 1.5ch;
+		transform: scaleY(1.1);
+	}
+	100% {
+		opacity: 1;
+		max-width: 1.5ch;
+		transform: scaleY(1);
+	}
+}
+
+@keyframes dna-glow {
+	0%,
+	100% {
+		text-shadow: none;
+	}
+	50% {
+		text-shadow: 0 0 8px var(--color-accent-400);
+	}
+}
+
+.dna-base-enter {
+	animation: dna-insert 0.4s ease-out both;
+}
+
+.dna-glow {
+	animation: dna-glow 0.8s ease-in-out;
+}
+
 /* Theme transition */
 body {
 	transition:
