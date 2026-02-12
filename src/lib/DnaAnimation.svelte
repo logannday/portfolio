@@ -138,6 +138,11 @@
 <div
 	class="overflow-hidden rounded-xl border border-slate-200 bg-white/50 p-4 sm:p-6 dark:border-slate-800 dark:bg-slate-800/30"
 >
+	<p
+		class="mb-3 text-center text-xs font-semibold tracking-wide text-slate-500 dark:text-slate-400"
+	>
+		Insertion Mutations
+	</p>
 	<div
 		class="flex flex-col items-center gap-0 font-mono text-xs leading-tight sm:text-sm md:text-base"
 	>
